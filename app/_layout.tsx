@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import "react-native-reanimated";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
+import { PLAYGROUND_SCREENS } from "./(tabs)/playground";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -33,8 +34,23 @@ export default function RootLayout() {
           name="(tabs)"
           options={{ headerShown: false }}
         />
+        {/* {PLAYGROUND_SCREENS.map((screen) => (
+          <Stack.Screen
+            key={screen.id}
+            name={`(screens)/${screen.id}`}
+            options={{ headerShown: false }}
+          />
+        ))} */}
         <Stack.Screen
-          name="(screens)/battery"
+          name={`(screens)/battery`}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name={`(screens)/brightness`}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name={`(screens)/accelerometer`}
           options={{ headerShown: false }}
         />
         <Stack.Screen name="+not-found" />

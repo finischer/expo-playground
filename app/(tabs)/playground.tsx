@@ -7,7 +7,7 @@ import { ThemedText } from "@/components/ThemedText";
 import { FlashList } from "@shopify/flash-list";
 import ListItem from "@/components/ListItem";
 
-const SCREENS = [
+export const PLAYGROUND_SCREENS = [
   {
     id: "battery",
     title: "Battery",
@@ -15,10 +15,16 @@ const SCREENS = [
     disabled: false,
   },
   {
-    id: "motion",
-    title: "Motion",
-    href: "/motion",
-    disabled: true,
+    id: "accelerometer ",
+    title: "Accelerometer",
+    href: "/accelerometer",
+    disabled: false,
+  },
+  {
+    id: "brightness ",
+    title: "Brightness",
+    href: "/brightness",
+    disabled: false,
   },
 ];
 
@@ -36,7 +42,7 @@ const PlaygroundScreen = () => {
     >
       <ThemedView style={styles.titleContainer}>
         <FlashList
-          data={SCREENS}
+          data={PLAYGROUND_SCREENS}
           keyExtractor={(item) => item.id}
           ItemSeparatorComponent={() => <View style={{ height: 10 }} />}
           renderItem={({ item }) => (
